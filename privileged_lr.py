@@ -1,6 +1,6 @@
 import cvxpy as cp
 import numpy as np
-
+import warnings
 # To define the Privliged Logistic Regression Class
 from sklearn.base import BaseEstimator
 from sklearn.linear_model._base import LinearClassifierMixin
@@ -275,6 +275,9 @@ class PrivilegedLogisticRegression(BaseEstimator, LinearClassifierMixin,
         try:
             problem.solve(max_iters=self.max_iter, verbose=self.verbose, abstol=self.tol)
         except Exception as e:
+            warnings.warn('Encountered an error while solving the problem. Hyperparameters may be invalid.' +
+                          f'lambda_base: {self.lambda_base}, lambda_star: {self.lambda_star}, '+ 
+                          f'alpha: {self.alpha}, xi_link: {self.xi_link}')
             # Sometimes would raise "cvxpy.error.SolverError: Solver 'ECOS' failed. 
             # Try another solver, or solve with verbose=True for more information."
             raise ValueError(e)

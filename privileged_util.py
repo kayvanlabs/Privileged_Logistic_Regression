@@ -13,7 +13,8 @@ def _check_X_y(X, y):
         raise ValueError("This solver needs samples of 2 classes"
                          " in the data, but the data contains only one"
                          " class: {}.".format(classes[0]))
-
+    # change all the y that equals zero to -1
+    y[y == 0] = -1
     X, y = check_X_y(X, y, accept_sparse='csr', order="C")
     return X, y, classes
 
