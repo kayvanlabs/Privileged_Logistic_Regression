@@ -36,4 +36,4 @@ score = metric_to_evaluate(y_test, y_pred)
 
 ### Simulated Experiments
 
-[Example_LUPI.ipynb](/Example_LUPI.ipynb) and [Example_LUPAPI.ipynb](/Example_LUPAPI.ipynb) contain code for simulated experiments, catering to scenarios where privileged information is either fully available or only partially available. This code is ready for execution directly within a Jupyter Notebook environment.
+[Example-LUPI.ipynb](/Example-LUPI.ipynb) and [Example-LUPAPI.ipynb](/Example-LUPAPI.ipynb) contain code for simulated experiments, catering to scenarios where privileged information is either fully available or only partially available. This code is ready for execution directly within a Jupyter Notebook environment.
